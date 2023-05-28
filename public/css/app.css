@@ -289,3 +289,64 @@ body {
   .footer a:focus {
     color: #feff04;
   }
+
+     
+  .center-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  /* Custom styling for input fields */
+  .form-control {
+    background-color: #bcd2d2;
+    color: #121414;
+  }
+  
+  /* Adjusting styles for form container */
+  .form-container {
+    width: 400px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .register-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Styling for form labels */
+  .form-label {
+    color: white;
+  }
+
+  .custom-button {
+    background-color: #3b4ac9;
+    color: #feff04;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    border: 2px solid #3b4ac9
+  }
+
+  .custom-button:hover {
+    background-color: #feff04;
+    border: 2px solid #feff04;
+    color: #3b4ac9;
+  }
+  .login-message {
+    color: #feff04;
+    margin-top: 1.5rem;
+  }
+
+  .login-link {
+    color: #feff04;
+    text-decoration: underline;
+  }
+
+  .login-link:hover {
+    color: #d9c900;
+  }

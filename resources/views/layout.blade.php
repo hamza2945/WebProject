@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Typing Test</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('css/app.css') }}" />
 </head>
 
@@ -16,19 +17,15 @@
               <a class="navbar-logo" href="{{url('/race')}}"><img src="{{asset('images/logo.png')}}" alt="Logo"></a>
               <ul class="navbar-links">
                     <li><a href="{{url('/recent')}}">Recent Results</a></li>
-                    <li><a href="{{url('/profile')}}">Profile</a></li>
-                    <li><a href="#">Another Link</a></li>
+                    <li><a href="{{url('/dashboard')}}">Profile</a></li>
+                    <li><a href="{{url('/login')}}">Login</a></li>
                 </ul>
             </div>
         </nav>
     </header>
+   
+  @yield('content')
 
-
-   <div class="container"> 
-  @yield('race')
-   </div>
-
-  
   <footer class="footer navbar-fixed-bottom">
     <div class="container">
         <div class="footer-content">

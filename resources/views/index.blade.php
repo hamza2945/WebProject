@@ -1,6 +1,12 @@
 @extends('layout')
-@section('race')
+@section('content')
+
 <div class="container">
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
         <input type="text" class="input-field">
         <div class="content-box">
             <div class="content">

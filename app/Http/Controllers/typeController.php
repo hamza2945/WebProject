@@ -16,6 +16,12 @@ class typeController extends Controller
         return view('index');
     }
 
+
+    public function results()
+    {
+        return view('recent');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -39,7 +45,7 @@ class typeController extends Controller
             'cpm' => $request->input('cpm'),
             'errors' => $request->input('errors'),
         ]);
-        resultsModel::create($validatedData);
+        resultsModel::create($typingResult);
 
         return response()->json(['message' => 'Typing results saved successfully.'], 200);
     }
