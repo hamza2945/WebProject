@@ -7,6 +7,11 @@
             {{ session('success') }}
         </div>
     @endif
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
         <input type="text" class="input-field">
         <div class="content-box">
             <div class="content">

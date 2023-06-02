@@ -8,6 +8,8 @@
             {{ session('success') }}
         </div>
     @endif
+
+
         <h1>User Information</h1>
         <form action="{{route('edit')}}" method="post">
             @csrf
@@ -26,6 +28,8 @@
     </div>
 @endif
         <input type="submit" class="btn btn-primary" value="Edit Information"></a>
+        <a href="{{ route('logout') }}" class="btn btn-primary">Logout</a>
+        
         </form> 
     </div>
 @endsection

@@ -18,10 +18,10 @@
           <span class="input-group-text"><i class="fas fa-envelope fa-lg fa-fw"></i></span>
         </div>
         <input type="email" id="form3ExampleEmail" class="form-control"name="email" placeholder="Your Email">
-        @error('email')
-        <div class="text-danger">{{ $message }}</div>
-        @enderror
       </div>
+      @error('email')
+      <div class="text-danger">{{ $message }}</div>
+      @enderror
     </div>
     <div class="form-group">
       <label for="form3Example4c" class="form-label">Password</label>
@@ -30,10 +30,10 @@
           <span class="input-group-text"><i class="fas fa-lock fa-lg fa-fw"></i></span>
         </div>
         <input type="password" id="form3Example4c" class="form-control" name="password"placeholder="Password">
-        @error('password')
-        <div class="text-danger">{{ $message }}</div>
-        @enderror
       </div>
+      @error('password')
+      <div class="text-danger">{{ $message }}</div>
+      @enderror
         </div>
        
         

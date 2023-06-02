@@ -48,7 +48,13 @@ class userController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             $user = User::where('email', $credentials['email'])->first();
+            //dd($user);
+            // Session::put('email', $user['email']);
+            // Session::put('username', $user['username']);
+            // Session::put('password', $user['password']);
+            // Session::put('id',$user['id']);
 
+            Session::put('user',$user);
             return redirect()->intended('dashboard')->withSuccess('You have Successfully loggedin')->with('user', $user);
         }
   
@@ -82,10 +88,19 @@ class userController extends Controller
     public function dashboard()
     {
         if(Auth::check()){
+            
+            // $sessionData = Session::all();
+
+            // // Display session data
+            // foreach ($sessionData as $key => $value) {
+            //     echo $key . ' => ';
+            //     var_dump($value);
+            //     echo '<br>';
+            // }
             return view('profile');
         }
   
-        return redirect()->back()->with('error', 'Invalid credentials');
+        return redirect()->back()->with('error', 'Invalid credentials, Please Log-In');
     }
     
     /**
@@ -122,14 +137,17 @@ class userController extends Controller
      */
     public function edit(Request $request) {
             $data=$request->only(['editusername','id','editpassword']);
-            //dd($data);
             $user=User::find($data['id']);
-            //dd($user);
+            
                 $user->username = $data['editusername'];
-                $user->password = Hash::make($data['editpassword']);
+               // $user->password = Hash::make($data['editpassword']);
                 $user->save();
+                $sesUser=session('user');
+                $sesuser['username']=$data['editusername'];
+                $sesuser['passsword']=$data['editpassword'];
 
-            return redirect('dashboard')->withSuccess('Updated Successfully');
+                Session::put('user', $user);
+                return redirect('dashboard')->withSuccess('Updated Successfully');
 
     }
 
